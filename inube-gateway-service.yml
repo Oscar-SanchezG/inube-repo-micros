@@ -24,6 +24,12 @@ spring:
             - Path=/api/inube/service/**
           filters:
             - AuthenticationFilter
+        - id: library-service
+          uri: lb://library-service
+          predicates:
+            - Path=/api/inube/books/**
+          filters:
+            - AuthenticationFilter
           
    
 
@@ -46,3 +52,4 @@ jwt:
 server:
 
   port: 8107
+

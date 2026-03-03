@@ -5,7 +5,7 @@ spring:
   application:
     name: library-service
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+    url: jdbc:oracle:thin:@localhost:1521:xe
     username: bamboDevSpringSecurityCloud
     password: bamboDevSpringSecurityCloud
     driver-class-name: oracle.jdbc.OracleDriver

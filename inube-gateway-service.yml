@@ -29,10 +29,17 @@ spring:
 
         - id: books-service
           uri: lb://BOOKS-SERVICE
+
           predicates:
             - Path=/api/inube/books/**
+
           filters:
             - AuthenticationFilter
+
+            - name: CircuitBreaker
+              args:
+                name: booksCircuitBreaker
+                fallbackUri: forward:/fallback/books
 
 eureka:
   client:

@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: inube-registry-service
+  security:
+    user:
+      name: eureka
+      password: eureka123
 
 eureka:
   client:
@@ -20,12 +24,6 @@ management:
   endpoint:
     health:
       show-details: always
-
-spring:
-  security:
-    user:
-      name: eureka
-      password: eureka123
 
 info:
   app:

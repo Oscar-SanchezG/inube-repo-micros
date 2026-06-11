@@ -21,6 +21,12 @@ management:
     health:
       show-details: always
 
+spring:
+  security:
+    user:
+      name: eureka
+      password: eureka123
+
 logging:
   level:
     org.springframework.cloud.config: DEBUG

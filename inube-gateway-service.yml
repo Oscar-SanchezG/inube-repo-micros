@@ -91,3 +91,33 @@ logging:
   level:
     org.springframework.cloud.gateway: INFO
     com.inube.inube_gateway_service: DEBUG
+
+resilience4j:
+
+  circuitbreaker:
+
+    instances:
+
+      authCircuitBreaker:
+
+        slidingWindowSize: 10
+
+        minimumNumberOfCalls: 5
+
+        failureRateThreshold: 50
+
+        waitDurationInOpenState: 30s
+
+        permittedNumberOfCallsInHalfOpenState: 3
+
+      authUserCircuitBreaker:
+
+        slidingWindowSize: 10
+
+        minimumNumberOfCalls: 5
+
+        failureRateThreshold: 50
+
+        waitDurationInOpenState: 30s
+
+        permittedNumberOfCallsInHalfOpenState: 3

@@ -36,13 +36,17 @@ spring:
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://localhost:8106/eureka/
-    registerWithEureka: true
-    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka:eureka123@localhost:8106/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
 
   instance:
-    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+    prefer-ip-address: true
 
 server:
   port: 8107
@@ -64,3 +68,8 @@ info:
   app:
     name: Inube Gateway Service
     version: 1.0.0
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+    com.inube.inube_gateway_service: DEBUG

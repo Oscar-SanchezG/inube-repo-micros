@@ -5,6 +5,9 @@ spring:
   application:
     name: inube-registry-service
 
+  config:
+    import: configserver:http://configadmin:config123@localhost:8105
+
 eureka:
   client:
     register-with-eureka: false

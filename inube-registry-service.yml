@@ -27,6 +27,11 @@ spring:
       name: eureka
       password: eureka123
 
+info:
+  app:
+    name: Inube Registry Service
+    version: 1.0.0
+
 logging:
   level:
     org.springframework.cloud.config: DEBUG
